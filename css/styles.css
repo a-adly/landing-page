@@ -64,10 +64,55 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+#menu-toggle,
+.label-toggle {
+    display: none;
+}
+
 .navbar__menu ul {
-    padding-left: 0;
+    padding: 0;
     margin: 0;
     text-align: right;
+    background-color: #1d1d1d;
+    text-align: center;
+}
+
+/* break point for nav bar */
+
+@media screen and (max-width: 500px) {
+
+
+    .navbar__menu {
+        position: relative;
+    }
+
+    .navbar__menu ul {
+        width: 100%;
+        max-width: 200px;
+        -webkit-transform: translate(-200px, 0);
+        transform: translate(-200px, 0);
+        position: absolute;
+        border-radius: 0 10px 10px 0;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+        padding: 10px 0;
+    }
+
+    #menu-toggle:checked~ul {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .label-toggle {
+        cursor: pointer;
+        display: block;
+        width: 50px;
+        color: #fff;
+        font-size: 1.5em;
+        padding: 15px 20px;
+    }
+
 }
 
 .navbar__menu li {
